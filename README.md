@@ -1,5 +1,5 @@
-# ReactJS Shopping Cart
-A Simple shopping cart implementation with reactJS.
+# ReactJS Redux Shopping Cart
+A Simple shopping cart implementation with reactJS and Redux.
 
 ## Setup
 
