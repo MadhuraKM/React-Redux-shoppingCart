@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+    font-family: calibri;
+}
+
+.productsContainer{
+    text-align: center;
+    padding: 10px;
+    display: inline-block;    
+}
+
+.cartContainer{
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    
+}
+
+.product{
+    border: 2px black solid;
+    margin: 0px 10px 10px;
+    padding: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.cart{
+    border: 6px red solid;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.weight, .price {
+    padding-top: 5px;
+}
+
+table{
+    width: 100%;
+}
+th, td{
+    text-align: left;
+}
+
+.remove{
+    background-color: darkorange;
+    border: 1px red solid;
+}
+@media only screen and (max-width: 600px) {
+    .productsContainer{
+        width: 100%;  
+        display: block;
+    }    
+    .cartContainer{
+        width: 100%;     
+        display: block;  
+    }    
+    .product{
+        width: 100%;
+    }    
+    .cart{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .productsContainer{
+        width: 100%;
+        display: block;
+    }    
+    .cartContainer{
+        width: 100%;  
+        display: block;     
+    }    
+    .product{
+        width: 45%;
+    }    
+    .cart{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .productsContainer{
+        width: 75%;  
+    }    
+    .cartContainer{
+        width: 25%;       
+    }    
+    .product{
+        width: 30%;
+    }    
+    .cart{
+        width: 100%;
+    }
+}
+
+img {
+    width: 100px;
+    height: 130px
+}
+
+.menu {
+    list-style-type: none;
+}
+
+.menu li {
+    display: inline-block;
+    padding-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu li a{
+    text-decoration: none;
+}
+
+.menu li a:hover{
+    text-decoration: underline;
+    color:green;
+}
+
+.home {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.shop h2{
+    padding-left: 40px;
+}
+/*form Styles */
+h5{
+    color: green;
+}
+form {
+    width: 35%;
+    margin: 0 auto;
+}
+form input[type=text], form input[type=number], form select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+form div {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
