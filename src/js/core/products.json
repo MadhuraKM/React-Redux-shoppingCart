@@ -3,7 +3,7 @@
         "id": 1,
         "name": "Bindi Masala",
         "price": 120,
-        "image": "./images/maiyas-bindimasala.jpg",
+        "image": "maiyas-bindimasala.jpg",
         "brand": "Maiyas",
         "weight": "200 Grams"
     },
@@ -11,7 +11,7 @@
         "id": 2,
         "name": "Bisibelebath Powder",
         "price": 60,
-        "image": "./images/maiyas-bisibelebath.jpg",
+        "image": "maiyas-bisibelebath.jpg",
         "brand": "Maiyas",
         "weight": "100 Grams"
     },
@@ -19,7 +19,7 @@
         "id": 3,
         "name": "Sambar Powder",
         "price": 48,
-        "image": "./images/maiyas-sambar.jpg",
+        "image": "maiyas-sambar.jpg",
         "brand": "Maiyas",
         "weight": "50 Grams"
     },
@@ -27,7 +27,7 @@
         "id": 4,
         "name": "Chilli Powder",
         "price": 32,
-        "image": "./images/mtr-chilli.jpg",
+        "image": "mtr-chilli.jpg",
         "brand": "MTR",
         "weight": "50 Grams"
     },
@@ -35,7 +35,7 @@
         "id": 5,
         "name": "Cumin Powder",
         "price": 56,
-        "image": "./images/mtr-cumin.jpg",
+        "image": "mtr-cumin.jpg",
         "brand": "MTR",
         "weight": "100 Grams"
     },
@@ -43,7 +43,7 @@
         "id": 6,
         "name": "Pulav Masala",
         "price": 160,
-        "image": "./images/mtr-pulav.jpg",
+        "image": "mtr-pulav.jpg",
         "brand": "MTR",
         "weight": "200 Grams"
     },
@@ -51,7 +51,7 @@
         "id": 7,
         "name": "Puliyogare Powder",
         "price": 82,
-        "image": "./images/mtr-puliyogare.jpg",
+        "image": "mtr-puliyogare.jpg",
         "brand": "MTR",
         "weight": "100 Grams"
     },
@@ -59,7 +59,7 @@
         "id": 8,
         "name": "Sambar Powder",
         "price": 35,
-        "image": "./images/mtr-sambar.jpg",
+        "image": "mtr-sambar.jpg",
         "brand": "MTR",
         "weight": "50 Grams"
     },
@@ -67,7 +67,7 @@
         "id": 9,
         "name": "Turmeric Powder",
         "price": 60,
-        "image": "./images/mtr-turmeric.jpg",
+        "image": "mtr-turmeric.jpg",
         "brand": "MTR",
         "weight": "100 Grams"
     }

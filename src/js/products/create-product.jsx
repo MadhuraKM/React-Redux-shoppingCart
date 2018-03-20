@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import styless from '../styles.css';
-import { addProduct } from "../actions/index";
+import { addProduct } from "./action";
 
 const mapStateToProps = state => {
     return { products: state.products };
@@ -30,7 +29,6 @@ class ConnectedForm extends Component{
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.fileSelectedHandler = this.fileSelectedHandler .bind(this);
     }
 
     handleInputChange(event) {
@@ -42,35 +40,15 @@ class ConnectedForm extends Component{
             [name]: value
         });
 
-        //if( !this.state.image || name == 'brand'){
-            this.setState({
-                image: "./images/" + this.state.brand + ".jpg",
-                id: this.props.products.length + 1
-            })
-        //}
+        this.setState({
+            image: this.state.brand + ".jpg",
+            id: this.props.products.length + 1
+        })
 
     }
 
     handleSubmit(event) {
-        //alert('Your favorite flavor is: ' + this.state.value);
-        //event.preventDefault();
 
-
-        //const formData = new FormData();
-        //formData.append('myFile', this.state.selectedImage, this.state.selectedImage.name);
-        //axios.post('http://localhost:8282/images/', formData);
-
-        /*axios.post('/images/', formData, {
-            onUploadProgress: progressEvent => {
-              console.log(progressEvent.loaded / progressEvent.total)
-            }
-        });*/
-        
-        
-        console.log("this.state-- ", this.state);
-        //event.preventDefault();
-
-        //this.props.addNewProductProp(this.state);
         this.props.addProduct(this.state);
 
         this.setState({
@@ -84,13 +62,6 @@ class ConnectedForm extends Component{
         this.showMsg = true;
 
         event.preventDefault();
-    }
-
-    fileSelectedHandler(event) {
-        console.log(event.target.files[0]);
-        this.setState({
-            selectedImage: event.target.files[0]
-        });
     }
 
     render() {
@@ -125,16 +96,6 @@ class ConnectedForm extends Component{
                 type="number"
                 value={this.state.weight}
                 onChange={this.handleInputChange} />
-
-                <div hidden="false">
-                <label htmlFor="image"  hidden="true">Image:</label>                   
-                <input id="image"
-                name="image"
-                type="text"
-                value={this.state.image}
-                onChange={this.handleInputChange}  hidden="true"/>
-
-                <input type="file" onChange={this.fileSelectedHandler}  hidden="true"/></div>
 
                 <input type="submit" value="Submit" />
             </form>

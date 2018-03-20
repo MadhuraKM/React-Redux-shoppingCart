@@ -1,8 +1,9 @@
 import React from 'react';
-import Product from './Product.jsx';
+import Product from './product.jsx';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { addProduct, addToCart, removeFromCart } from "../actions/index";
+import { addProduct } from "./action";
+import { addToCart, removeFromCart } from "../cart/action";
 
 
 const mapStateToProps = state => {

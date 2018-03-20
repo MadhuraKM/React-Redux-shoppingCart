@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { removeFromCart } from "../actions/index";
+import { removeFromCart } from "./action";
 
 const mapStateToProps = state => {
     return { cartItems: state.cartItems };
@@ -16,22 +16,6 @@ const mapDispatchToProps = dispatch => {
 class connectedCart extends React.Component{
     constructor(props) {
         super(props);
-
-        this.removeFromCart = this.removeFromCart.bind(this);
-    }
-
-    removeFromCart(cartItemID) {
-
-         let cartItem = this.props.cartItems.find((cartItem) => { 
-             return cartItem.id == cartItemID;                
-         });
-
-         this.props.removeFromCart(cartItem);
- 
-        /* this.props.totalAmount = Number(this.props.totalAmount) - Number(cartItem.amount);
-         this.setState({ totalAmount: this.state.totalAmount});  */      
-
-         console.log("Main productRemoveAlert : ", cartItem);
     }
 
     render(){
@@ -62,12 +46,17 @@ class connectedCart extends React.Component{
                         </tr>            
                         {
                             this.props.cartItems.map((cartItem, i) => <CustomRow key={i} item={cartItem} 
-                            removeFromCartProp={this.removeFromCart}/> )
+                            removeFromCartProp={this.props.removeFromCart}/> )
                         }
                     </tbody>
                 </table>
             </div>
         );
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        localStorage.setItem('cartItems', JSON.stringify( this.props.cartItems));
+        //localStorage.setItem('totalAmount', this.state.totalAmount);
     }
 
 }
@@ -80,12 +69,11 @@ class CustomRow extends React.Component{
                 <td>{this.props.item.quantity}</td>
                 <td>{Number(this.props.item.quantity) * Number(this.props.item.price)}</td>
                 <td><button className='remove' title='Remove' value={this.props.item.id}
-                onClick={ () => this.props.removeFromCartProp(this.props.item.id) }>X</button></td>
+                onClick={ () => ( this.props.removeFromCartProp(this.props.item.id) ) }>X</button></td>
             </tr>
         );
     }
 }
-
 
 const Cart = connect(mapStateToProps, mapDispatchToProps)(connectedCart);
 

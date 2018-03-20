@@ -1,5 +1,5 @@
-import { ADD_PRODUCT } from "../constants/action-types";
-import data from '../products.json';
+import { ADD_PRODUCT } from "../core/constants/action-types";
+import data from '../core//products.json';
 
 const initialState = data;
 
