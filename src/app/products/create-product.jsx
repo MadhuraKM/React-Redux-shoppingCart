@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 import { addProduct } from "./action";
+import {validateProductForm} from "./util/validate-form";
+import {FormErrors} from "./util/form-errors.jsx"
+import "./form.scss";
+//import "../../assets/style-new.css";
 
 const mapStateToProps = state => {
     return { products: state.products };
@@ -13,52 +17,70 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
+const initialState = {
+    fields: {
+        id: '',
+        brand: 'Maiyas',
+        name: '',
+        price: '',
+        weight:'',
+        image: ''
+    },
+    errors: {
+        id: '',
+        brand: '',
+        name: '',
+        price: '',
+        weight:'',
+        image: ''
+    },
+    hasError: false,
+    isFormValid: false,
+    alertMessage: '',
+    isFormSubmissionSuccess: false,
+    showMsg: false
+}
+
 class ConnectedForm extends Component{
+    
     constructor(props) {
         super(props);
-        this.state = {
-            id: '',
-            brand: 'Maiyas',
-            name: '',
-            price: '',
-            weight:'',
-            image: '',
-        };
-        
-        this.showMsg = false;
+        this.state = initialState;       
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleInputChange(event) {
-        const target = event.target;
-        const value = target.type === 'checkbox' ? target.checked : target.value;
-        const name = target.name;
+    handleInputChange(e) {
+        let key = e.target.name;
+        let value = e.target.value;
+        let fields = this.state.fields;
+        fields[key] = value;
+        fields['image'] = this.state.fields.brand + ".jpg";
+        fields['id'] = this.props.products.length + 1;
 
-        this.setState({
-            [name]: value
-        });
+        this.setState(
+            {fields},
+            () => this.validateField(key, value)
+        );
+    }
 
-        this.setState({
-            image: this.state.brand + ".jpg",
-            id: this.props.products.length + 1
-        })
 
+    validateField(key, value) {
+        let {errors, isFormValid, hasError} = validateProductForm(key, value, this.state.errors);
+        this.setState(
+            {
+                errors,
+                isFormValid,
+                hasError
+            }
+        )
     }
 
     handleSubmit(event) {
 
-        this.props.addProduct(this.state);
-
-        this.setState({
-            brand: 'Maiyas',
-            name: '',
-            price: '',
-            weight:'',
-            image: '',
-        });
-
+        this.props.addProduct(this.state.fields);
+        this.setState({initialState});
         this.showMsg = true;
 
         event.preventDefault();
@@ -70,6 +92,12 @@ class ConnectedForm extends Component{
             <form className="productForm" onSubmit={this.handleSubmit}>
                 <h2>Create New Product:</h2>
                 <h5 hidden={!this.showMsg}>Product created successfully</h5>
+                {
+                    this.state.hasError ?
+                        <div className="panel panel-default">
+                            <FormErrors formErrors={this.state.errors}/>
+                        </div> : null
+                }
                 <label htmlFor="brand">Product Category:</label>                    
                 <select id="brand" name="brand" value={this.state.value} onChange={this.handleInputChange}>
                     <option value="Maiyas">Maiyas</option>
@@ -97,16 +125,12 @@ class ConnectedForm extends Component{
                 value={this.state.weight}
                 onChange={this.handleInputChange} />
 
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit" disabled={!this.state.isFormValid}/>
             </form>
         );
     }
 }
 
 const CreateProduct = connect(mapStateToProps, mapDispatchToProps)(ConnectedForm);
-
-/*ConnectedForm.propTypes = {
-  addArticle: PropTypes.func.isRequired
-};*/
 
 export default CreateProduct;

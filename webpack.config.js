@@ -1,13 +1,17 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+var path = require('path');
+
+var APP_DIR = path.resolve(__dirname, 'src/app');
 
 var config = {
-   entry: './main.js',
+   entry:  APP_DIR + '/main.js',
    output: {
       path:'/',
       filename: 'index.js',
    },
    devServer: {
       inline: true,
+      contentBase: path.join(__dirname, "src"),
       port: 8282,
       historyApiFallback: true
    },

@@ -4,7 +4,7 @@
   "description": "Shop Spices Online",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot"
+    "start": "webpack-dev-server --hot --content-base src"
   },
   "author": "",
   "license": "ISC",

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { removeFromCart } from "./action";
+import "./cart.css";
 
 const mapStateToProps = state => {
     return { cartItems: state.cartItems };

@@ -14,7 +14,7 @@ class Product extends Component{
             }
         });
 
-        var imgsSrc = "/src/assets/images/" + this.props.productDetails.image;
+        var imgsSrc = "/src/app/assets/images/" + this.props.productDetails.image;
 
         return(
             <div className='product'>

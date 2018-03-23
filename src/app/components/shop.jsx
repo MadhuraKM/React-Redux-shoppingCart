@@ -1,9 +1,7 @@
 import React from 'react';
-import Products from '../../products/products.jsx';
-import Cart from '../../cart/cart.jsx';
-import '../../../assets/styles.css'; 
-//import style from  '../form.scss';
-//import styles from '../style-new.css';
+import Products from '../products/products.jsx';
+import Cart from '../cart/cart.jsx';
+import './shop.css'; 
 
 const Shop = () => (
     <div className="shop">

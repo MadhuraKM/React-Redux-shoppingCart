@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom'
-import data from '../products.json';
-import Header from './header.jsx';
-import Home from './home.jsx';
-import Shop from './Shop.jsx'
-import CreateProduct from '../../products/create-product.jsx';
+//import data from './products.json';
+import Header from './components/header.jsx';
+import Home from './components/home.jsx';
+import Shop from './components/Shop.jsx'
+import CreateProduct from './products/create-product.jsx';
 
 const App = () => (
     <div>

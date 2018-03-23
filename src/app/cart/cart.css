@@ -1,0 +1,51 @@
+.cartContainer{
+    text-align: center;
+    padding: 10px;
+    display: inline-block;
+    position: absolute;
+    
+}
+.cart{
+    border: 6px red solid;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+table{
+    width: 100%;
+}
+th, td{
+    text-align: left;
+}
+
+.remove{
+    background-color: darkorange;
+    border: 1px red solid;
+}
+@media only screen and (max-width: 600px) {
+    .cartContainer{
+        width: 100%;     
+        display: block;  
+    }    
+    .cart{
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .cartContainer{
+        width: 100%;  
+        display: block;     
+    }    
+    .cart{
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .cartContainer{
+        width: 25%;       
+    }    
+    .cart{
+        width: 100%;
+    }
+}

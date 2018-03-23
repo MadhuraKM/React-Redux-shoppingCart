@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux";
 import rootReducer from "../reducers/index";
-import productMiddleware from "../../products/helper";
-import cartMiddleware from "../../cart/helper";
+import productMiddleware from "../products/middleware";
+import cartMiddleware from "../cart/middleware";
 
 const store = createStore(
   rootReducer,

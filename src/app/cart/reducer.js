@@ -1,4 +1,4 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../core/constants/action-types";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../constants/action-types";
 
 const initialState = JSON.parse(localStorage.getItem('cartItems')) || [];
 
