@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
-import { addProduct } from "./action";
+import { addProduct } from "./middleware";
 import {validateProductForm} from "./util/validate-form";
 import {FormErrors} from "./util/form-errors.jsx"
 import "./form.scss";
-//import "../../assets/style-new.css";
 
 const mapStateToProps = state => {
     return { products: state.products };

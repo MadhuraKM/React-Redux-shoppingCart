@@ -2,11 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom'
-//import data from './products.json';
-import Header from './components/header.jsx';
-import Home from './components/home.jsx';
-import Shop from './components/Shop.jsx'
-import CreateProduct from './products/create-product.jsx';
+import Header from './core/components/header.jsx';
+import Shop from './shop/Shop.jsx'
+import CreateProduct from './create-product/create-product.jsx';
 
 const App = () => (
     <div>
@@ -15,7 +13,7 @@ const App = () => (
         <main>
             <Switch>
                 <Route exact path='/' render={(props) => (
-                    <Home {...props} />
+                    <Shop {...props} />
                     )}/>
                 <Route path='/shop' render={(props) => (
                     <Shop  />

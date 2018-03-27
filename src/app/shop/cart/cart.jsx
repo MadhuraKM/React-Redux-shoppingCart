@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
-import { removeFromCart } from "./action";
+import { removeFromCart } from "./middleware";
 import "./cart.css";
 
 const mapStateToProps = state => {
@@ -10,7 +10,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        removeFromCart: product => dispatch(removeFromCart(product))
+        removeFromCart: itemId => dispatch(removeFromCart(itemId))
     };
 };
 

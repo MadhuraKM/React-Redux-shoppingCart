@@ -1,6 +1,6 @@
 import React from 'react';
-import Products from '../products/products.jsx';
-import Cart from '../cart/cart.jsx';
+import Products from './products/products.jsx';
+import Cart from './cart/cart.jsx';
 import './shop.css'; 
 
 const Shop = () => (

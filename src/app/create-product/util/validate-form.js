@@ -1,4 +1,4 @@
-import {FORM_ERROR_MESSAGES} from "../../constants/form-errors";
+import {FORM_ERROR_MESSAGES} from "../../core/constants/form-errors";
 
 export function validateProductForm(key, value, errors) {
     let isFormValid = true;

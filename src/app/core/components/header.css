@@ -10,12 +10,18 @@
 }
 
 .menu li a{
+    /*background-color: #f44336;*/
+    border: #f44336 solid 1px;
+    color: #f44336;
+    padding: 10px 20px;
+    text-align: center; 
     text-decoration: none;
+    display: inline-block
 }
 
-.menu li a:hover{
-    text-decoration: underline;
-    color:green;
+.menu li a:hover, .menu li a:active{
+    background-color: red;
+    color: white;
 }
 
 .home {
